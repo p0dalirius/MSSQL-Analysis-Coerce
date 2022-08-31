@@ -1,0 +1,5 @@
+<Restore xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+    <File>\\192.168.2.51\SYSVOL\db.abf</File>
+    <DatabaseName>\\192.168.2.51\SYSVOL\db.abf</DatabaseName>
+    <DbStorageLocation xmlns="http://schemas.microsoft.com/analysisservices/2008/engine/100/100">\\192.168.2.51\SYSVOL\db.abf</DbStorageLocation>
+</Restore>
