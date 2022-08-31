@@ -1,5 +1,7 @@
 # MSSQL Analysis Services - Coerced Authentication
 
+![](./.github/banner.png)
+
 A technique to coerce a Windows SQL Server to authenticate on an arbitrary machine.
 
 This proof of concept is co-authored by <a href="https://twitter.com/intent/follow?screen_name=podalirius_" title="Follow"><img src="https://img.shields.io/twitter/follow/podalirius_?label=Podalirius&style=social"></a> and <a href="https://twitter.com/intent/follow?screen_name=_Worty" title="Follow"><img src="https://img.shields.io/twitter/follow/_Worty?label=Worty&style=social"></a>.
